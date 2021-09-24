@@ -30,8 +30,7 @@ namespace WebAPI.Controllers
         [HttpPost]
         public async Task<EventDTO> Post()
         {
-
-            return result;
+            throw new NotImplementedException();
         }
     }
 }
