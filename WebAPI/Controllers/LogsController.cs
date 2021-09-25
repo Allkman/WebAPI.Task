@@ -16,7 +16,7 @@ namespace WebAPI.Controllers
         
         private readonly ILogger<LogsController> _logger;
 
-        public LogsController(ILogger<LogsController> logger, IService)
+        public LogsController(ILogger<LogsController> logger)
         {
             _logger = logger;
         }
