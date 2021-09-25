@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Task.Data.FactoryServices.Interfaces
 {
-    class IConsoleFactory
+    class IWriteToFileFactory
     {
     }
 }
