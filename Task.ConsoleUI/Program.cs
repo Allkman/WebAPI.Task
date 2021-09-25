@@ -1,4 +1,5 @@
 ﻿using System;
+using Task.Data.InitialData;
 
 namespace Task.ConsoleUI
 {
@@ -6,7 +7,8 @@ namespace Task.ConsoleUI
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            EventInitialData.DataSeed();
+                as
         }
     }
 }
