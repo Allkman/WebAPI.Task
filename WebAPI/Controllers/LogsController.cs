@@ -13,16 +13,22 @@ namespace WebAPI.Controllers
     public class LogsController : ControllerBase
     {
         
-
+        
         private readonly ILogger<LogsController> _logger;
 
-        public LogsController(ILogger<LogsController> logger)
+        public LogsController(ILogger<LogsController> logger, IService)
         {
             _logger = logger;
         }
 
         [HttpGet]
         public async Task<EventDTO> Get()
+        {
+
+            throw new NotImplementedException();
+        }
+        [HttpGet("{id}")]
+        public async Task<EventDTO> GetById(int id)
         {
 
             throw new NotImplementedException();
