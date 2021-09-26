@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,19 +14,18 @@ namespace WebAPI.Controllers
     public class LogsController : ControllerBase
     {
         
-        
         private readonly ILogger<LogsController> _logger;
 
-        public LogsController(ILogger<LogsController> logger)
+        public LogsController(ILogger<LogsController> logger, )
         {
             _logger = logger;
         }
 
         [HttpGet]
-        public async Task<EventDTO> Get()
+        public IActionResult Get()
         {
 
-            throw new NotImplementedException();
+            return Ok();
         }
         [HttpGet("{id}")]
         public async Task<EventDTO> GetById(int id)

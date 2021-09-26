@@ -7,8 +7,7 @@ namespace Task.ConsoleUI
     {
         static void Main(string[] args)
         {
-            EventInitialData.DataSeed();
-                as
+
         }
     }
 }
