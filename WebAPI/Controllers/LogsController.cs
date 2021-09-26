@@ -20,7 +20,7 @@ namespace WebAPI.Controllers
         
         private readonly ILogger<LogsController> _logger;
         private readonly IMapper _mapper;
-        //private readonly IDbFactory _dbFactory;
+        private readonly IDbFactory _dbFactory;
         private readonly IEmailFactory _emailFactory;
         private readonly IConsoleFactory _consoleFactory;
         private readonly IWriteToFileFactory _writeToFileFactory;
@@ -30,14 +30,14 @@ namespace WebAPI.Controllers
         public LogsController(ILogger<LogsController> logger, 
             IMapper mapper, 
 
-            //IDbFactory dbFactory, 
+            IDbFactory dbFactory, 
             IEmailFactory emailFactory,
             IConsoleFactory consoleFactory,
             IWriteToFileFactory writeToFileFactory)
         {
             _logger = logger;
             _mapper = mapper;
-            //_dbFactory = dbFactory;
+            _dbFactory = dbFactory;
             _emailFactory = emailFactory;
             _consoleFactory = consoleFactory;
             _writeToFileFactory = writeToFileFactory;
