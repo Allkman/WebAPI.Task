@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Task.BusinessLayer
+namespace Task.Application.FactoryServices.Interfaces
 {
-    public interface IFactory
+    public interface IConsoleFactory
     {
     }
 }

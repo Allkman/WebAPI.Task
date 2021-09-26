@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Task.Data.FactoryServices.Interfaces
+namespace Task.Data.FactoryServices
 {
-    class IConsoleFactory
+    public class WriteToFileFactory
     {
     }
 }

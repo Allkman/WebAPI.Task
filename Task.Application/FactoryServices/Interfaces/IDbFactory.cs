@@ -5,12 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using Task.Data.Models;
 
-namespace Task.Data.FactoryServices.Interfaces
+namespace Task.Application.FactoryServices.Interfaces
 {
     public interface IDbFactory
     {
         IEnumerable<Event> Get();
         Event GetById(int id);
-        void Post(IEnumerable<Event> events);
+        void Create(Event events);
     }
 }

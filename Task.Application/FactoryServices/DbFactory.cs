@@ -1,10 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
-using Task.Data.FactoryServices.Interfaces;
+using Task.Application.FactoryServices.Interfaces;
+using Task.Data;
 using Task.Data.Models;
 
-namespace Task.Data.FactoryServices
+namespace Task.Application.FactoryServices
 {
     public class DbFactory : IDbFactory
     {
@@ -30,16 +31,12 @@ namespace Task.Data.FactoryServices
                  .FirstOrDefault<Event>();
         }
 
-        public void Post(IEnumerable<Event> events)
+        public void Create(Event events)
         {
-            using (_db)
-            {
-                foreach (var item in events)
-                {
-                    _db.Events.Add(item);
-                }
-                _db.SaveChanges();
-            }
+
+             _db.Events.Add(events);            
+               _db.SaveChanges();
+            
         }
     }
 }
