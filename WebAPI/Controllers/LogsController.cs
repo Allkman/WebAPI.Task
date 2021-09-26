@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Task.Application.FactoryServices.Interfaces;
 using Task.Data.Models;
-using WebAPI.DTOs;
+using Task.Shared.DTOs;
 using WebAPI.Services;
 
 namespace WebAPI.Controllers
@@ -17,7 +17,7 @@ namespace WebAPI.Controllers
     [Route("[controller]")]
     public class LogsController : ControllerBase
     {
-        
+
         private readonly ILogger<LogsController> _logger;
         private readonly IMapper _mapper;
         //private readonly IDbFactory _dbFactory;
@@ -25,10 +25,10 @@ namespace WebAPI.Controllers
         private readonly IConsoleFactory _consoleFactory;
         private readonly IWriteToFileFactory _writeToFileFactory;
         private readonly OptionsService _optionsService;
-        private int pasirinkimas = 3;
+        private int pasirinkimas = 2;
 
-        public LogsController(ILogger<LogsController> logger, 
-            IMapper mapper, 
+        public LogsController(ILogger<LogsController> logger,
+            IMapper mapper,
 
             //IDbFactory dbFactory, 
             IEmailFactory emailFactory,
@@ -56,16 +56,18 @@ namespace WebAPI.Controllers
             throw new NotImplementedException();
         }
         [HttpPost]
-        public IActionResult Post(Event eventItem)
+        public IActionResult Post(EventDTO eventItem)
         {
 
             //if(pasirinkimas == 1)
             //{ _consoleFactory.Create(); }
-            //else if(pasirinkimas == 2)
-            //{ _emailFactory.Create(); }
-             if (pasirinkimas == 3)
+            if (pasirinkimas == 3)
             {
                 _writeToFileFactory.WriteToFile();
+            }
+            else if (pasirinkimas == 2)
+            {
+                _emailFactory.Create(eventItem);
             }
             //else if(pasirinkimas == 4)
             //{
