@@ -47,35 +47,31 @@ namespace WebAPI.Controllers
         public async Task<List<EventDTO>> Get()
         {
             throw new NotImplementedException();
-
         }
+
         [HttpGet("{id}")]
         public async Task<EventDTO> GetById(int id)
         {
-
             throw new NotImplementedException();
         }
+
         [HttpPost]
-
-        public IActionResult Post(EventDTO eventItem)
-
-        public IActionResult Post([FromBody] EventDTO eventItem)
-
+        public IActionResult Post([FromBody] EventDTO request)
         {
-            var entity = _mapper.Map<Event>(eventItem);
+            var entity = _mapper.Map<Event>(request);
             _dbFactory.Create(entity);
 
             //if(pasirinkimas == 1)
             //{ _consoleFactory.Create(); }
 
-            if (pasirinkimas == 3)
-            {
-                _writeToFileFactory.WriteToFile();
-            }
-            else if (pasirinkimas == 2)
-            {
-                _emailFactory.Create(eventItem);
-            }
+            //if (pasirinkimas == 3)
+            //{
+            //    _writeToFileFactory.WriteToFile();
+            //}
+            //else if (pasirinkimas == 2)
+            //{
+            //    _emailFactory.Create(eventItem);
+            //}
 
             //else if(pasirinkimas == 2)
             //{ _emailFactory.Create(); }
