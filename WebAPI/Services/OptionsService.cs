@@ -19,7 +19,9 @@ namespace WebAPI.Services
             IOptions<ConsoleOptionsSettings> consoleOptions,
             IOptions<EmailOptionsSettings> emailOptions,
             IOptions<WriteToFileOptionsSettings> writeToFileOptions,
-            IOptions<EfDbOptionsSettings> efDbOptions            
+            IOptions<EfDbOptionsSettings> efDbOptions         
+            
+
             )
         {
             _consoleOptions = consoleOptions.Value;
@@ -31,11 +33,15 @@ namespace WebAPI.Services
 
         public void ReadOptionsSettings()
         {
-            if (isOption = false)
-            {
-
-                return;
-            }
+            //if (!isOption = false)
+            //{
+            //    //ConsoleFactory
+            //    return;
+            //}
+            //if (true)
+            //{
+            //    //EmailFactory
+            //}
         }
     }
 }
