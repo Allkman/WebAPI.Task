@@ -12,6 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WebAPI.MyOptionsSettings;
 
 namespace WebAPI
 {
@@ -27,7 +28,11 @@ namespace WebAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.AddSqlServer(ConncetionString);
+            services.Configure<ConsoleOptionsSettings>(Configuration.GetSection("ConsoleOption"));
+            services.Configure<EmailOptionsSettings>(Configuration.GetSection("EmailOption"));
+            services.Configure<WriteToFileOptionsSettings>(Configuration.GetSection("WriteToFileOption"));
+            services.Configure<EfDbOptionsSettings>(Configuration.GetSection("EfDbOption"));
+
             services.ConfigureAutomapper();
             services.AddControllers();
             services.AddSwaggerGen(c =>
