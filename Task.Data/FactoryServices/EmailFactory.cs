@@ -8,5 +8,6 @@ namespace Task.Data.FactoryServices
 {
     class EmailFactory
     {
+        // email factory
     }
 }
