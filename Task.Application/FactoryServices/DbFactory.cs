@@ -31,12 +31,10 @@ namespace Task.Application.FactoryServices
                  .FirstOrDefault<Event>();
         }
 
-        public void Create(Event events)
+        public void Create(Event eventItem)
         {
-
-             _db.Events.Add(events);            
-               _db.SaveChanges();
-            
+            _db.Events.Add(eventItem);
+            _db.SaveChanges();
         }
     }
 }

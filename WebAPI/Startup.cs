@@ -34,13 +34,12 @@ namespace WebAPI
         public void ConfigureServices(IServiceCollection services)
         {
             //services.Configure<>(_configuration.GetSection(""));
-
-            services.AddDbContext<TaskDbContext>(opt => opt.UseSqlServer(Configuration["MyOptions:EfDbOption"]));
+            services.AddDbContext<TaskDbContext>(opt => opt.UseSqlServer(Configuration["ConnectionString:EfDbOption"]));
 
             services.AddTransient<IConsoleFactory, ConsoleFactory>();
             services.AddTransient<IEmailFactory, EmailFactory>();
             services.AddTransient<IWriteToFileFactory, WriteToFileFactory>();
-            services.AddSingleton<IDbFactory, DbFactory>();
+            services.AddTransient<IDbFactory, DbFactory>();
 
             services.ConfigureAutomapper();
             services.AddControllers();

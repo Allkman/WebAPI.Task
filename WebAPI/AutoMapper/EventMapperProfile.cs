@@ -13,10 +13,10 @@ namespace WebAPI.AutoMapper
         public EventMapperProfile()
         {
             CreateMap<Event, EventDTO>()
-                .IncludeMembers(l => l.Location);
+                .IncludeMembers(l => l.Location).ReverseMap();
             CreateMap<Location, EventDTO>()
-                .IncludeMembers(u => u.User);
-            CreateMap<User, EventDTO>();
+                .IncludeMembers(u => u.User).ReverseMap();
+            CreateMap<User, EventDTO>().ReverseMap();
            
         }
     }
