@@ -8,5 +8,6 @@ namespace Task.Application.FactoryServices.Interfaces
 {
     public interface IWriteToFileFactory
     {
+        void WriteToFile();
     }
 }

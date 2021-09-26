@@ -13,6 +13,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WebAPI.MyOptionsSettings;
+using Task.Application.FactoryServices.Interfaces;
+using Task.Application.yServices;
+using Task.Application.FactoryServices;
 
 namespace WebAPI
 {
@@ -29,7 +32,10 @@ namespace WebAPI
         public void ConfigureServices(IServiceCollection services)
         {
             //services.Configure<>(_configuration.GetSection(""));
-      
+            services.AddTransient<IConsoleFactory, ConsoleFactory>();
+            services.AddTransient<IEmailFactory, EmailFactory>();
+            services.AddTransient<IWriteToFileFactory, WriteToFileFactory>();
+            //services.AddTransient<IDbFactory, DbFactory>();
 
             services.ConfigureAutomapper();
             services.AddControllers();

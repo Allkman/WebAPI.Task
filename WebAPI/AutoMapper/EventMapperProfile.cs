@@ -16,6 +16,7 @@ namespace WebAPI.AutoMapper
                 .IncludeMembers(l => l.Location);
             CreateMap<Location, EventDTO>()
                 .IncludeMembers(u => u.User);
+            CreateMap<User, EventDTO>();
            
         }
     }
