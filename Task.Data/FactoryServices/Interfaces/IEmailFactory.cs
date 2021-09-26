@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Task.Data.FactoryServices.Interfaces
 {
-    public interface IEmaiFactory
+    class IConsoleFactory
     {
     }
 }
