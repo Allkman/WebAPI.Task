@@ -11,16 +11,10 @@ namespace Task.Data
 {
     public class TaskDbContext : DbContext
     {
-        public DbSet<Event> Events { get; set; }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        public TaskDbContext([NotNullAttribute] DbContextOptions options) : base(options)
         {
-            optionsBuilder.UseSqlServer(@"Server=DESKTOP-MC4QAMJ;Database=EventsDB;Trusted_Connection=True;");
         }
-
-        //public TaskDbContext([NotNullAttribute] DbContextOptions options) : base(options)
-        //{
-        //}
-
+        public DbSet<Event> Events { get; set; }
+        
     }
 }
