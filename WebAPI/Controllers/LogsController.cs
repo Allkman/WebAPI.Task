@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Task.Application.FactoryServices.Interfaces;
 using Task.Data.Models;
-using WebAPI.DTOs;
+using Task.Shared.DTOs;
 using WebAPI.Services;
 
 namespace WebAPI.Controllers
@@ -25,7 +25,7 @@ namespace WebAPI.Controllers
         private readonly IConsoleFactory _consoleFactory;
         private readonly IWriteToFileFactory _writeToFileFactory;
         private readonly OptionsService _optionsService;
-        private int pasirinkimas = 3;
+        private int pasirinkimas = 2;
 
         public LogsController(ILogger<LogsController> logger,
             IMapper mapper,
@@ -56,13 +56,27 @@ namespace WebAPI.Controllers
             throw new NotImplementedException();
         }
         [HttpPost]
+
+        public IActionResult Post(EventDTO eventItem)
+
         public IActionResult Post([FromBody] EventDTO eventItem)
+
         {
             var entity = _mapper.Map<Event>(eventItem);
             _dbFactory.Create(entity);
 
             //if(pasirinkimas == 1)
             //{ _consoleFactory.Create(); }
+
+            if (pasirinkimas == 3)
+            {
+                _writeToFileFactory.WriteToFile();
+            }
+            else if (pasirinkimas == 2)
+            {
+                _emailFactory.Create(eventItem);
+            }
+
             //else if(pasirinkimas == 2)
             //{ _emailFactory.Create(); }
             // if (pasirinkimas == 3)
