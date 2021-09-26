@@ -11,6 +11,6 @@ namespace Task.Application.FactoryServices.Interfaces
     {
         IEnumerable<Event> Get();
         Event GetById(int id);
-        void Create(Event events);
+        void Create(Event eventItem);
     }
 }

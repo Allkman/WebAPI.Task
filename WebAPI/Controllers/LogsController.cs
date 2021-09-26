@@ -17,27 +17,27 @@ namespace WebAPI.Controllers
     [Route("[controller]")]
     public class LogsController : ControllerBase
     {
-        
+
         private readonly ILogger<LogsController> _logger;
         private readonly IMapper _mapper;
-        //private readonly IDbFactory _dbFactory;
+        private readonly IDbFactory _dbFactory;
         private readonly IEmailFactory _emailFactory;
         private readonly IConsoleFactory _consoleFactory;
         private readonly IWriteToFileFactory _writeToFileFactory;
         private readonly OptionsService _optionsService;
         private int pasirinkimas = 3;
 
-        public LogsController(ILogger<LogsController> logger, 
-            IMapper mapper, 
+        public LogsController(ILogger<LogsController> logger,
+            IMapper mapper,
 
-            //IDbFactory dbFactory, 
+            IDbFactory dbFactory,
             IEmailFactory emailFactory,
             IConsoleFactory consoleFactory,
             IWriteToFileFactory writeToFileFactory)
         {
             _logger = logger;
             _mapper = mapper;
-            //_dbFactory = dbFactory;
+            _dbFactory = dbFactory;
             _emailFactory = emailFactory;
             _consoleFactory = consoleFactory;
             _writeToFileFactory = writeToFileFactory;
@@ -56,17 +56,19 @@ namespace WebAPI.Controllers
             throw new NotImplementedException();
         }
         [HttpPost]
-        public IActionResult Post(Event eventItem)
+        public IActionResult Post([FromBody] EventDTO eventItem)
         {
+            var entity = _mapper.Map<Event>(eventItem);
+            _dbFactory.Create(entity);
 
             //if(pasirinkimas == 1)
             //{ _consoleFactory.Create(); }
             //else if(pasirinkimas == 2)
             //{ _emailFactory.Create(); }
-             if (pasirinkimas == 3)
-            {
-                _writeToFileFactory.WriteToFile();
-            }
+            // if (pasirinkimas == 3)
+            //{
+            //    _writeToFileFactory.WriteToFile();
+            //}
             //else if(pasirinkimas == 4)
             //{
             //    await _dbFactory.Create(eventItem);
