@@ -25,7 +25,7 @@ namespace WebAPI.Controllers
         private readonly IConsoleFactory _consoleFactory;
         private readonly IWriteToFileFactory _writeToFileFactory;
         private readonly OptionsService _optionsService;
-        private int pasirinkimas = 3;
+        private int pasirinkimas = 1;
 
         public LogsController(ILogger<LogsController> logger,
             IMapper mapper,
@@ -67,7 +67,7 @@ namespace WebAPI.Controllers
 
             if (pasirinkimas == 1)
             {
-                //_consoleFactory.Create();
+                _consoleFactory.Create(eventItem);
             }
             else if (pasirinkimas == 2)
             {
