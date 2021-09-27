@@ -11,11 +11,9 @@ namespace Task.Shared.DTOs
         public string Level { get; set; }
         public string MessageTemplate { get; set; }
         public string RenderedMessage { get; set; }
-        public int LocationId { get; set; }
         public string Address { get; set; }
         public string Latitude { get; set; }
         public string Longitude { get; set; }
-        public int UserId { get; set; }
         public string UserName { get; set; }
         public int Retries { get; set; }
     }
