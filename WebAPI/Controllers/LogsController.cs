@@ -44,14 +44,18 @@ namespace WebAPI.Controllers
         }
 
         [HttpGet]
-        public async Task<List<HomeWorkTask.Shared.DTOs.EventDTO>> Get()
+        public async Task<List<EventDTO>> Get()
         {
-            throw new NotImplementedException();
+            if (pasirinkimas ==4)
+            {
+                var eventsList = await _dbFactory.GetEvents();
+            }
+            return eventsList;
         }
-
         [HttpGet("{id}")]
-        public async Task<HomeWorkTask.Shared.DTOs.EventDTO> GetById(int id)
+        public async Task<EventDTO> GetById(int id)
         {
+
             throw new NotImplementedException();
         }
         [HttpPost]
@@ -74,6 +78,7 @@ namespace WebAPI.Controllers
             {
                 await _dbFactory.CreateEvent(eventItem);
             }
+
 
             return NoContent();
         }
