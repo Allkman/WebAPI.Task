@@ -44,27 +44,30 @@ namespace WebAPI.Controllers
         }
 
         [HttpGet]
-        public async Task<List<EventDTO>> Get()
+        public async Task<IEnumerable<EventDTO>> Get()
         {
-            if (pasirinkimas ==4)
-            {
-                var eventsList = await _dbFactory.GetEvents();
-            }
+            //if (pasirinkimas ==4)
+            //{
+            var eventsList = await _dbFactory.GetEvents();
+            //}
             return eventsList;
         }
+
         [HttpGet("{id}")]
         public async Task<EventDTO> GetById(int id)
         {
+            var eventItem = await _dbFactory.GetEventById(id);
 
-            throw new NotImplementedException();
+            return eventItem;
         }
+
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] EventDTO eventItem)
         {
-            
-            if(pasirinkimas == 1)
-            { 
-               //_consoleFactory.Create();
+
+            if (pasirinkimas == 1)
+            {
+                //_consoleFactory.Create();
             }
             else if (pasirinkimas == 2)
             {
