@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Task.Data\HomeWorkTask.Data.csproj" />
+    <ProjectReference Include="..\HomeWorkTask.Data\HomeWorkTask.Data.csproj" />
   </ItemGroup>
 
 </Project>
