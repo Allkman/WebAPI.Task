@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using HomeWorkTask.Data.Models;
 using HomeWorkTask.Shared.DTOs;
 
+
 namespace WebAPI.AutoMapper
 {
     public class EventMapperProfile : Profile

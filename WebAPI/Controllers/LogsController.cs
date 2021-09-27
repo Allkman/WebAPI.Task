@@ -47,12 +47,11 @@ namespace WebAPI.Controllers
         public async Task<List<HomeWorkTask.Shared.DTOs.EventDTO>> Get()
         {
             throw new NotImplementedException();
-
         }
+
         [HttpGet("{id}")]
         public async Task<HomeWorkTask.Shared.DTOs.EventDTO> GetById(int id)
         {
-
             throw new NotImplementedException();
         }
         [HttpPost]
@@ -75,7 +74,6 @@ namespace WebAPI.Controllers
             {
                 await _dbFactory.CreateEvent(eventItem);
             }
-
 
             return NoContent();
         }
