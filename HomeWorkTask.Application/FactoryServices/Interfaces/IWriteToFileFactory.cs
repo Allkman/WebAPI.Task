@@ -1,4 +1,6 @@
-﻿using System;
+﻿using HomeWorkTask.Data.Models;
+using HomeWorkTask.Shared.DTOs;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +10,7 @@ namespace HomeWorkTask.Application.FactoryServices.Interfaces
 {
     public interface IWriteToFileFactory
     {
-        void WriteToFile();
+        List<Event> Get();
+        void Post(EventDTO eventDTO);
     }
 }
