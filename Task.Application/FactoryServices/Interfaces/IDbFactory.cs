@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Task.Data.Models;
+using HomeWorkTask.Shared.DTOs;
 
-namespace Task.Application.FactoryServices.Interfaces
+namespace HomeWorkTask.Application.FactoryServices.Interfaces
 {
     public interface IDbFactory
     {
-        IEnumerable<Event> Get();
-        Event GetById(int id);
-        void Create(Event eventItem);
+        Task<IEnumerable<EventDTO>> GetEvents();
+        Task<EventDTO> GetEventById(int id);
+        Task CreateEvent(EventDTO eventDTO);
     }
 }

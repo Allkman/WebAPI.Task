@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Task.Application.FactoryServices.Interfaces
+namespace HomeWorkTask.Application.FactoryServices.Interfaces
 {
     public interface IWriteToFileFactory
     {
