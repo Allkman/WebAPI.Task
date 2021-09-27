@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Task.BusinessLayer
+namespace HomeWorkTask.BusinessLayer
 {
     public interface IRepository<T> 
     {

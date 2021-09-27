@@ -1,23 +1,15 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using WebAPI.AutoMapper;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using WebAPI.MyOptionsSettings;
-using Task.Application.FactoryServices.Interfaces;
-using Task.Application.yServices;
-using Task.Application.FactoryServices;
-using Task.Data;
+using HomeWorkTask.Application.FactoryServices.Interfaces;
+using HomeWorkTask.Application.yServices;
+using HomeWorkTask.Application.FactoryServices;
 using Microsoft.EntityFrameworkCore;
+using HomeWorkTask.Data;
 
 namespace WebAPI
 {
@@ -34,7 +26,7 @@ namespace WebAPI
         public void ConfigureServices(IServiceCollection services)
         {
             //services.Configure<>(_configuration.GetSection(""));
-            services.AddDbContext<TaskDbContext>(opt => opt.UseSqlServer(Configuration["ConnectionString:EfDbOption"]));
+            services.AddDbContext<HomeWorkTaskDbContext>(opt => opt.UseSqlServer(Configuration["ConnectionString:EfDbOption"]));
 
             services.AddTransient<IConsoleFactory, ConsoleFactory>();
             services.AddTransient<IEmailFactory, EmailFactory>();

@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Task.Data.Models;
+using HomeWorkTask.Data.Models;
 
-namespace Task.Data.InitialData
+namespace HomeWorkTask.Data.InitialData
 {
     public static class EventInitialData
     {

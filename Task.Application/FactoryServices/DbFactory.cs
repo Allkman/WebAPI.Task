@@ -1,40 +1,53 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
-using Task.Application.FactoryServices.Interfaces;
-using Task.Data;
-using Task.Data.Models;
+using HomeWorkTask.Application.FactoryServices.Interfaces;
+using HomeWorkTask.Data;
+using HomeWorkTask.Data.Models;
+using System.Threading.Tasks;
+using AutoMapper;
+using HomeWorkTask.Shared.DTOs;
 
-namespace Task.Application.FactoryServices
+namespace HomeWorkTask.Application.FactoryServices
 {
     public class DbFactory : IDbFactory
     {
-        private readonly TaskDbContext _db;
+        private readonly HomeWorkTaskDbContext _db;
+        private readonly IMapper _mapper;
 
-        public DbFactory(TaskDbContext db)
+        public DbFactory(HomeWorkTaskDbContext db, IMapper mapper)
         {
             _db = db;
+            _mapper = mapper;
         }
 
-        public IEnumerable<Event> Get()
+        public Task<IEnumerable<EventDTO>> GetEvents()
         {
-            return _db.Events
+            var eventList = _db.Events
                 .Include(a => a.Location)
-                .ThenInclude(b => b.User)
-                .ToList();
+                .ThenInclude(b => b.User);
+            var model = _mapper.Map<IEnumerable<EventDTO>>(eventList);
+
+            return Task.FromResult(model);
         }
-        public Event GetById(int id)
+        public async Task<EventDTO> GetEventById(int id)
         {
-            return _db.Events.Where(x => x.Id == id)
+            var entity = await _db.Events.Where(x => x.Id == id)
                  .Include(a => a.Location)
                  .ThenInclude(b => b.User)
-                 .FirstOrDefault<Event>();
+                 .ToListAsync();
+
+            var model = _mapper.Map<EventDTO>(entity.FirstOrDefault());
+
+            return model;
         }
 
-        public void Create(Event eventItem)
+        public async Task CreateEvent(EventDTO eventDTO)
         {
-            _db.Events.Add(eventItem);
-            _db.SaveChanges();
+            Event model = _mapper.Map<Event>(eventDTO);
+            _db.Events.Add(model);
+
+            await _db.SaveChangesAsync();
         }
     }
 }

@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
-namespace Task.Data.Models
+namespace HomeWorkTask.Data.Models
 {
     public class Location
     {

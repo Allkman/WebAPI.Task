@@ -1,14 +1,10 @@
-﻿using System;
+﻿using HomeWorkTask.Application.FactoryServices.Interfaces;
+using HomeWorkTask.Data.InitialData;
+using HomeWorkTask.Data.Models;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Task.Application.FactoryServices.Interfaces;
-using Task.Data.InitialData;
-using Task.Data.Models;
 
-namespace Task.Application.FactoryServices
+namespace HomeWorkTask.Application.FactoryServices
 {
     public class WriteToFileFactory : IWriteToFileFactory
     {

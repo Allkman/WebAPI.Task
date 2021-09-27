@@ -1,9 +1,10 @@
-﻿using Task.Shared.DTOs;
+﻿using HomeWorkTask.Shared.DTOs;
+using System.Threading.Tasks;
 
-namespace Task.Application.FactoryServices.Interfaces
+namespace HomeWorkTask.Application.FactoryServices.Interfaces
 {
     public interface IEmailFactory
     {
-        void Create(EventDTO instance);
+        Task Create(EventDTO instance);
     }
 }

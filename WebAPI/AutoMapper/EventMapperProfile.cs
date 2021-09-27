@@ -3,8 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Task.Data.Models;
-using Task.Shared.DTOs;
+using HomeWorkTask.Data.Models;
+using HomeWorkTask.Shared.DTOs;
+
 
 namespace WebAPI.AutoMapper
 {
@@ -16,8 +17,7 @@ namespace WebAPI.AutoMapper
                 .IncludeMembers(l => l.Location).ReverseMap();
             CreateMap<Location, EventDTO>()
                 .IncludeMembers(u => u.User).ReverseMap();
-            CreateMap<User, EventDTO>().ReverseMap();
-           
+            CreateMap<User, EventDTO>().ReverseMap();           
         }
     }
 }

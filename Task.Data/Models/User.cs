@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Task.Data.Models
+namespace HomeWorkTask.Data.Models
 {
     public class User
     {

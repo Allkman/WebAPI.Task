@@ -5,15 +5,15 @@ VisualStudioVersion = 16.0.31410.357
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAPI", "WebAPI\WebAPI.csproj", "{B987065E-E3FE-4532-A8EC-578B5649943A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task.Data", "Task.Data\Task.Data.csproj", "{379B25C7-651D-4351-BBA5-C9CA5BBD54B0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomeWorkTask.Data", "Task.Data\HomeWorkTask.Data.csproj", "{379B25C7-651D-4351-BBA5-C9CA5BBD54B0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task.ConsoleUI", "Task.ConsoleUI\Task.ConsoleUI.csproj", "{D48E1628-65F3-46A3-A664-4C01477A07AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomeWorkTask.ConsoleUI", "Task.ConsoleUI\HomeWorkTask.ConsoleUI.csproj", "{D48E1628-65F3-46A3-A664-4C01477A07AF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task.BusinessLayer", "Task.BusinessLayer\Task.BusinessLayer.csproj", "{90CD40AF-1B43-4681-B63A-AB45D067D2E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomeWorkTask.BusinessLayer", "Task.BusinessLayer\HomeWorkTask.BusinessLayer.csproj", "{90CD40AF-1B43-4681-B63A-AB45D067D2E4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task.Application", "Task.Application\Task.Application.csproj", "{4BEC7DEA-2384-4B35-93CD-A9C3756BD44A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomeWorkTask.Application", "Task.Application\HomeWorkTask.Application.csproj", "{4BEC7DEA-2384-4B35-93CD-A9C3756BD44A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task.Shared", "Task.Shared\Task.Shared.csproj", "{A93D452C-3F35-4DDC-AF43-96A3F0517E9C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomeWorkTask.Shared", "Task.Shared\HomeWorkTask.Shared.csproj", "{A93D452C-3F35-4DDC-AF43-96A3F0517E9C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

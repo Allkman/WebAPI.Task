@@ -1,16 +1,17 @@
 ﻿using System.Net;
 using System.Net.Mail;
 using System.Text.Json;
-using Task.Application.FactoryServices.Interfaces;
-using Task.Shared.DTOs;
+using System.Threading.Tasks;
+using HomeWorkTask.Application.FactoryServices.Interfaces;
+using HomeWorkTask.Shared.DTOs;
 
-namespace Task.Application.FactoryServices
+namespace HomeWorkTask.Application.FactoryServices
 {
     public class EmailFactory : IEmailFactory
     {
-        public void Create(EventDTO instance)
+        public async Task Create(EventDTO instance)
         {
-
+            await Task.Delay(1);
             string emailBody = JsonSerializer.Serialize(instance);
 
             var smtpClient = new SmtpClient("smtp.mailgun.org")
