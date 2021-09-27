@@ -11,9 +11,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Task.Application\HomeWorkTask.Application.csproj" />
-    <ProjectReference Include="..\Task.Data\HomeWorkTask.Data.csproj" />
-    <ProjectReference Include="..\Task.Shared\HomeWorkTask.Shared.csproj" />
+    <ProjectReference Include="..\HomeWorkTask.Application\HomeWorkTask.Application.csproj" />
+    <ProjectReference Include="..\HomeWorkTask.Data\HomeWorkTask.Data.csproj" />
+    <ProjectReference Include="..\HomeWorkTask.Shared\HomeWorkTask.Shared.csproj" />
   </ItemGroup>
 
 </Project>
