@@ -13,8 +13,4 @@
     </PackageReference>
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\HomeWorkTask.BusinessLayer\HomeWorkTask.BusinessLayer.csproj" />
-  </ItemGroup>
-
 </Project>
