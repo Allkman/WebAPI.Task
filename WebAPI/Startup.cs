@@ -10,6 +10,8 @@ using HomeWorkTask.Application.yServices;
 using HomeWorkTask.Application.FactoryServices;
 using Microsoft.EntityFrameworkCore;
 using HomeWorkTask.Data;
+using WebAPI.MyOptionsSettings.Interfaces;
+using WebAPI.MyOptionsSettings;
 
 namespace WebAPI
 {
@@ -25,13 +27,15 @@ namespace WebAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.Configure<>(_configuration.GetSection(""));
-            services.AddDbContext<HomeWorkTaskDbContext>(opt => opt.UseSqlServer(Configuration["ConnectionString:EfDbOption"]));
+            services.Configure<MyOptionsConfigurationReader>(Configuration.GetSection("MyOptions:ConnectionStrings:DbOption"));
+            services.Configure<MyOptionsConfigurationReader>(Configuration.GetSection("MyOptions:ConnectionStrings:EmailSettings"));
+            //services.AddDbContext<HomeWorkTaskDbContext>(opt => opt.UseSqlServer(Configuration["MyOptions:ConnectionString:DbOption"]));
 
             services.AddTransient<IConsoleFactory, ConsoleFactory>();
             services.AddTransient<IEmailFactory, EmailFactory>();
             services.AddTransient<IWriteToFileFactory, WriteToFileFactory>();
             services.AddTransient<IDbFactory, DbFactory>();
+            services.AddTransient<IMyOptionsConfigurationReader, MyOptionsConfigurationReader>();
 
             services.ConfigureAutomapper();
             services.AddControllers();
